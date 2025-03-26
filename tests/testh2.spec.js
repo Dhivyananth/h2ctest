@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 import { test, expect } from '@playwright/test';
 
 test('has title', async ({ page }) => {
@@ -18,8 +18,8 @@ test('Log in to the system using user standard_user', async ({ page }) => {
   const loginbutton = page.getByRole('button', {name:'Login'});
 
 
-  await username.fill('standard_user');
-  await password.fill('secret_sauce');
+  await username.fill(process.env.username);
+  await password.fill(process.env.password);
   await loginbutton.click();
 
 
@@ -45,8 +45,8 @@ test('Add two items to the cart. Track the names of the items that you have adde
   const loginbutton = page.getByRole('button', {name:'Login'});
 
 
-  await username.fill('standard_user');
-  await password.fill('secret_sauce');
+  await username.fill(process.env.username);
+  await password.fill(process.env.password);
   await loginbutton.click();
 
   await page.waitForTimeout(5000);
@@ -87,8 +87,8 @@ test('Go to the shopping cart and validate the added items by names', async ({pa
   const loginbutton = page.getByRole('button', {name:'Login'});
 
 
-  await username.fill('standard_user');
-  await password.fill('secret_sauce');
+  await username.fill(process.env.username);
+  await password.fill(process.env.password);
   await loginbutton.click();
 
   await page.waitForTimeout(7000);
@@ -123,8 +123,8 @@ test('Enter First Name, Last Name and Zip/Postal code and proceed', async ({page
   const loginbutton = page.getByRole('button', {name:'Login'});
 
 
-  await username.fill('standard_user');
-  await password.fill('secret_sauce');
+  await username.fill(process.env.username);
+  await password.fill(process.env.password);
   await loginbutton.click();
 
   await page.waitForTimeout(7000);
@@ -178,8 +178,8 @@ test('Validate the ‘Item total:’ of the two items added to the cart (without
   const loginbutton = page.getByRole('button', {name:'Login'});
 
 
-  await username.fill('standard_user');
-  await password.fill('secret_sauce');
+  await username.fill(process.env.username);
+  await password.fill(process.env.password);
   await loginbutton.click();
 
   test.setTimeout(120_000);
